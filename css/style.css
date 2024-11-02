@@ -1,0 +1,23 @@
+.content-section{
+    display: none;
+} 
+#sidebar {
+    width: 20%;
+    margin-left: 0;
+    transition: margin-left 0.3s ease; /* Membuat efek transisi */
+}
+
+#sidebar.collapsed {
+    margin-left: -20%; /* Menggeser sidebar ke kiri untuk menyembunyikannya */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 60%; /* Sidebar lebih lebar pada layar kecil */
+    }
+
+    #sidebar.collapsed {
+        margin-left: -60%; /* Geser lebih banyak untuk menyembunyikan sidebar */
+    }
+}
