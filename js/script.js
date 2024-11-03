@@ -1,7 +1,25 @@
 const url = 'https://script.google.com/macros/s/AKfycbx8qz_BpFVblePFafu9t8h53RURI_bb5lP_Vd8y8vTjmzmf6UvRutKgywK9sPBBG2S-/exec';
 function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('collapsed');
+    const sidebar = document.getElementById('sidebar');
+    const mainPage = document.getElementById('mainPage');
+    const bgBackElements = document.querySelectorAll('.bgBack');
+    const potContentElements = document.querySelectorAll('.potContent'); // Ambil semua elemen dengan class potContent
+
+    sidebar.classList.toggle('collapsed');
+    mainPage.classList.toggle('expanded');
+
+    // Toggle class 'shifted' pada semua elemen dengan class 'bgBack'
+    bgBackElements.forEach(element => {
+        element.classList.toggle('shifted');
+    });
+
+    // Toggle class 'expanded' pada semua elemen dengan class 'potContent'
+    potContentElements.forEach(element => {
+        element.classList.toggle('expanded');
+    });
 }
+
+
 function showContent(sectionId) {
     // Sembunyikan semua section konten
     const sections = document.querySelectorAll('.content-section');
