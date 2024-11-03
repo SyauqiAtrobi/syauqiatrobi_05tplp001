@@ -1,5 +1,9 @@
+body{
+    overflow-x:hidden;
+}
 .content-section{
     display: none;
+    
 } 
 #sidebar {
     width: 20%;
@@ -8,7 +12,31 @@
 }
 
 #sidebar.collapsed {
-    margin-left: -20%; /* Menggeser sidebar ke kiri untuk menyembunyikannya */
+    margin-left: -16.5%; /* Menggeser sidebar ke kiri untuk menyembunyikannya */
+}
+#mainPage {
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    margin-left: 0%; /* Sesuaikan posisi saat sidebar terlihat */
+    width: 80%; /* Lebar utama ketika sidebar terlihat */
+    
+}
+
+#sidebar.collapsed + #mainPage {
+    margin-left: -15%; /* Memindahkan mainPage ke kiri ketika sidebar ditutup */
+    width: 100%; /* Memperluas mainPage ketika sidebar disembunyikan */
+}
+.bgBack{
+    width:115%; 
+    height:45%;
+}
+
+.potContent {
+    transition: width 0.3s ease;
+    width: 100%; /* Lebar default saat sidebar terlihat */
+}
+
+.potContent.expanded {
+    width: 120%; /* Lebar penuh saat sidebar ditutup */
 }
 
 /* Responsif untuk layar kecil */
